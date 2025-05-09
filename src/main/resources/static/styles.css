@@ -277,3 +277,8 @@ input[type="file"] {
     height: 100%;
     display: block;
 }
+
+img {
+    width: 200px;
+
+}
