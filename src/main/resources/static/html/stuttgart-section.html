@@ -1,23 +1,126 @@
 <section class="stuttgart-section" id="stuttgart-section">
     <form id="stuttgart" class="hidden">
         <h2>Analyseergebnisse von Stuttgart</h2>
-        <div class="inline">
-            <button type="button" onclick="showSchlossplatz()">Szenario Schlossplatz</button>
-            <button type="button" onclick="showSchlossplatz()">Szenario Fanwalk</button>
+        <div class="centered-button-group">
+            <button type="button" onclick="showElement('schlossplatz'); hideElement('fanwalk')">Szenario Schlossplatz
+            </button>
+            <button type="button" onclick="showElement('fanwalk'); hideElement('schlossplatz')">Szenario Fanwalk
+            </button>
         </div>
         <div id="schlossplatz" class="hidden">
-            <h3>Szenario Schlossplatz:</h3>
-            <div class="inline">
-                <p>In diesem Szenario wurden unterschiedliche Räumungsszenarien untersucht. </p>
-                <label for="heatmap">Heatmap für die Räumung des Schlossplatzes: Je dunkler die Einfärbung der Kacheln,
-                    desto später ist der Bereich geräumt</label>
-                <img id="heatmap" src="../results/munich/RSET-Heatmap-Muenchen.png" alt="Description of the image"/>
-                <label for="video_stuttgart">Räumungsverlaufdes Schlossplatzes:</label>
-                <video id="video_stuttgart" width="640" height="360" controls>
-                    <source src="../results/munich/video-Muenchen.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <h3>Szenario Schlossplatz</h3>
+            <p><b>Ausgangssituation:</b> <br><br>
+                Am Schlossplatz in der Stuttgarter Innenstadt fand bei der EURO 2024 das Fanfest
+                statt. Während des Fanfests wird gemeldet, dass sich eine USBV in unmittelbarer Nähe befindet.
+                <br> <br>
+                <b>Umgebungsplan</b></p>
+            <img id="plan-schlossplatz" width="1200" src="../results/stuttgart/plan-schlossplatz.png"
+                 alt="Description of the image"/>
+            <br> <br>
+            <p><b>Fragestellungen: </b></p>
+            <div>
+                <label>Wie können die Personen am schnellsten geräumt werden?</label>
+                <div class="inline">
+                    <button type="button" onclick="showElement('stuttgart-results')">Zeige Antworten</button>
+                    <button type="button" onclick="hideElement('stuttgart-results')">Schließe Antworten</button>
+                </div>
+                <div class="hidden" id="stuttgart-results">
+                    <div class="inline">
+                        <div>
+                            <label for="räumungsverlauf">Räumungsverlauf des Schlossplatzes</label>
+                            <img class="responsive-img" id="räumungsverlauf"
+                                 src="../results/stuttgart/Räumungsverlauf-Schlossplatz.png"/>
+                        </div>
+                        <div>
+                            <label for="video_stuttgart">Visueller Verlauf</label>
+                            <video class="responsive-img" id="video_stuttgart" controls>
+                                <source src="../results/stuttgart/video-räumung-mit-esplanade.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <hline></hline>
+                <div>
+
+                    <label>Wo können die Einsatzkräfte anrücken?</label>
+                    <div class="inline">
+                        <button type="button" onclick="showElement('stuttgart-esplanade')">Zeige Antworten</button>
+                        <button type="button" onclick="hideElement('stuttgart-esplanade')">Schließe Antworten</button>
+                    </div>
+                </div>
+                <div class="hidden" id="stuttgart-esplanade">
+                    <div class="inline">
+                        <div>
+                            <label for="räumungsverlauf">Räumung mit Nutzung der Esplanade</label>
+                            <video class="responsive-img" id="video-stuttgart-mit" controls>
+                                <source src="../results/stuttgart/video-räumung-mit-esplanade.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div>
+                            <label for="schlossplatz-mit-einsatzwagen">Mögliche Platzierung mit Schließung der
+                                Esplanade</label>
+                            <img class="responsive-img" id="schlossplatz-mit-einsatzwagen"
+                                 src="../results/stuttgart/plan-schlossplatz-mit-einsatzwagen.png"/>
+                        </div>
+                        <div>
+                            <label for="video_stuttgart">Räumung ohne Nutzung der Esplanade</label>
+                            <video class="responsive-img" id="video-stuttgart-ohne" controls>
+                                <source src="../results/stuttgart/video-räumung-ohne-esplanade.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
+
         </div>
+        <div id="fanwalk" class="hidden">
+            <h3>Szenario Fanwalk</h3>
+            <p><b>Ausgangssituation:</b> <br><br>
+                Die Fanwalks der Mannschaften Deutschland Ungarn waren durch die Stuttgarter Innenstadt geplant
+                <br> <br>
+                <b>Fragestellungen: </b></p>
+            <div>
+                <label>Mit welchem zeitlichen Versatz müssen die beiden Fangruppen losgeschickt werden, damit sie sich
+                    nicht einholen?</label>
+                <div class="inline">
+                    <button type="button" onclick="showElement('fanwalk-results')">Zeige Antworten</button>
+                    <button type="button" onclick="hideElement('fanwalk-results')">Schließe Antworten</button>
+                </div>
+                <div class="hidden" id="fanwalk-results">
+                    <div class="inline">
+                        <div>
+                            <label for="video_fanwalk_hun">Fanwalk Ungarischer Fans</label>
+                            <video class="responsive-img" id="video_fanwalk_hun" controls>
+                                <source src="../results/stuttgart/Ungarn-ab-1545-Fanwalk.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div>
+                            <label for="vergleich-de-hun">Vergleich der beiden Fanwalks</label>
+                            <img class="responsive-img" id="vergleich-de-hun"
+                                 src="../results/stuttgart/vergleich-de-hun.png"/>
+                        </div>
+                        <div>
+                            <label for="video_fanwalk_de">Fanwalk Deutscher Fans</label>
+                            <video class="responsive-img" id="video_fanwalk_de" controls>
+                                <source src="../results/stuttgart/video-de-Fanwalk.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <img id="plan-fanwalk" width="1200" src="../results/stuttgart/plan-fanwalk.png"
+                 alt="Description of the image"/>
+        </div>
+
+
     </form>
 </section>

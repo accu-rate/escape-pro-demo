@@ -1,4 +1,4 @@
-import {showStuttgart, showSchlossplatz} from './control.js';
+import {showElement, showSchlossplatz, showStuttgartResults, hideStuttgartResults, hideElement} from './control.js';
 import {initializeApp} from './init.js';
 import {initializeComponents} from './components.js';
 
@@ -9,5 +9,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 
-window.showStuttgart = showStuttgart;
-window.showSchlossplatz = showSchlossplatz;
+window.showElement = showElement;
+window.hideElement = hideElement;

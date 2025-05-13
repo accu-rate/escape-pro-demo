@@ -12,6 +12,13 @@ body {
     padding: 0;
     background: rgba(233, 234, 242, 0.8); /* Graublau */
     color: #0d3359; /* Dunkelblau */
+    font-size: 20px;
+}
+
+.responsive-img {
+    width: 50%;
+    height: auto; /* Beibehaltung des Seitenverhältnisses */
+    min-width: 800px; /* Mindestbreite */
 }
 
 h1, h2 {
@@ -29,7 +36,7 @@ h2 {
 
 h3 {
     text-align: left;
-    color: #1b6bbd; /* Mittelblau */
+    color: #E48312; /* Mittelblau */
 }
 
 form {
@@ -62,16 +69,25 @@ button {
     width: auto;
     padding: 10px;
     margin: 5px;
-    background-color: #1b6bbd;
+    background-color: #E48312;
     color: white;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
 }
 
+.centered-button-group {
+    display: flex;
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center; /* Zentriert vertikal */
+    gap: 10px; /* Abstand zwischen den Elementen */
+    width: 100%; /* Volle Breite */
+    margin: 0 auto; /* Zentriert den Container selbst */
+}
+
 button:hover {
-    background-color: #0d3359;
+    background-color: #F7CE9D;
 }
 
 .hidden {
@@ -86,8 +102,19 @@ button:hover {
 
 .inline {
     display: flex;
-    align-items: center; /* Elemente oben ausrichten */
-    gap: 10px; /* Abstand zwischen den Gruppen */
+    justify-content: center; /* Zentriert die Paare horizontal */
+    gap: 20px; /* Abstand zwischen den Paaren */
+}
+
+.inline > div {
+    display: flex;
+    flex-direction: column; /* Stapelt Label und Button vertikal */
+    align-items: center; /* Zentriert Label und Button horizontal */
+    text-align: center; /* Zentriert den Text im Label */
+}
+
+.inline label {
+    margin-bottom: 10px; /* Abstand zwischen Label und Button */
 }
 
 /* Tabellenstile */
@@ -129,14 +156,6 @@ button:hover {
     background-color: #e9eaf2; /* Graublau */
     cursor: pointer;
 }
-
-.button-container {
-    display: flex;
-    gap: 10px; /* Abstand zwischen den Buttons */
-    justify-content: center; /* Buttons zentrieren */
-    margin-top: 10px;
-}
-
 
 /* Diagramm- und Steuerungsstile */
 .chart-controls {
@@ -247,6 +266,7 @@ form#uploadMultipleFilesForm {
 .form-content {
     max-width: 90%;
     margin: 0 auto;
+    justify-content: center; /* Zentriert horizontal */
 }
 
 .button-container {
@@ -276,9 +296,4 @@ input[type="file"] {
     width: 100%;
     height: 100%;
     display: block;
-}
-
-img {
-    width: 200px;
-
 }
