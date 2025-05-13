@@ -18,7 +18,7 @@ body {
 .responsive-img {
     width: 50%;
     height: auto; /* Beibehaltung des Seitenverhältnisses */
-    min-width: 800px; /* Mindestbreite */
+    min-width: 400px; /* Mindestbreite */
 }
 
 h1, h2 {
@@ -49,7 +49,8 @@ form {
 }
 
 label {
-    display: center;
+    display: block; /* Ensures the label takes up the full width */
+    text-align: center; /* Centers the text horizontally */
     margin-top: 12px;
     margin-bottom: 12px;
     font-weight: bold;
